@@ -102,13 +102,13 @@
         <record model="ir.action.act_window.domain" id="act_approval_request_domain_pending">
             <field name="name">Pending</field>
             <field name="sequence" eval="10"/>
-            <field name="domain" eval="[('state', '=', 'pending')]" pyson="1"/>
+            <field name="domain">[('state', '=', 'pending')]</field>
             <field name="act_window" ref="act_approval_request"/>
         </record>
         <record model="ir.action.act_window.domain" id="act_approval_request_domain_all">
             <field name="name">All</field>
             <field name="sequence" eval="20"/>
-            <field name="domain" eval="" pyson="1"/>
+            <field name="domain"></field>
             <field name="act_window" ref="act_approval_request"/>
         </record>
 

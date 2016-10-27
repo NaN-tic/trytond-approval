@@ -160,9 +160,10 @@ class Request(Workflow, ModelSQL, ModelView):
         user = User(Transaction().user)
         for request in requests:
             request._check_allowed_user(user)
-            request.user = user
-            request.decision_date = datetime.now()
-        cls.save(requests)
+        cls.write(requests, {
+                'user': user,
+                'decision_date': datetime.now(),
+                })
 
     @classmethod
     @ModelView.button
@@ -172,9 +173,10 @@ class Request(Workflow, ModelSQL, ModelView):
         user = User(Transaction().user)
         for request in requests:
             request._check_allowed_user(user)
-            request.user = user
-            request.decision_date = datetime.now()
-        cls.save(requests)
+        cls.write(requests, {
+                'user': user,
+                'decision_date': datetime.now(),
+                })
 
     def _check_allowed_user(self, user):
         if self.user:
