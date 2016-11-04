@@ -4,13 +4,11 @@
 <tree string="Approval Request">
     <field name="document"/>
     <field name="version"/>
-    <field name="request_date" widget="date"/>
-    <field name="request_date" widget="time"/>
+    <field name="request_date"/>
     <field name="group"/>
     <field name="state"/>
     <field name="user"/>
-    <field name="decision_date" widget="date"/>
-    <field name="decision_date" widget="time"/>
+    <field name="decision_date"/>
     <button name="approve" string="Approve" tree_invisible="1"/>
     <button name="reject" string="Reject" tree_invisible="1"/>
     <button name="cancel" string="Cancel" tree_invisible="1"/>
