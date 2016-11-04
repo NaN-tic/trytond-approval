@@ -11,8 +11,8 @@
     <label name="request_date"/>
     <field name="request_date"/>
     <newline/>
-    <label name="description"/>
-    <field name="description" colspan="3"/>
+    <separator name="description" colspan="4"/>
+    <field name="description" colspan="4"/>
     <group id="state" col="6" colspan="4">
         <label name="state"/>
         <field name="state"/>

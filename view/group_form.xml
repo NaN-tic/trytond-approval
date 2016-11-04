@@ -6,6 +6,6 @@
     <field name="name"/>
     <label name="model"/>
     <field name="model"/>
-    <label name="users"/>
-    <field name="users" colspan="3"/>
+    <separator name="users" colspan="4"/>
+    <field name="users" colspan="4"/>
 </form>
