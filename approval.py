@@ -161,7 +161,11 @@ class Request(Workflow, ModelSQL, ModelView):
         for request in requests:
             request._check_allowed_user(user)
             request.user = user
-            request.decision_date = datetime.now()
+            decision_date = Transaction().context.get('date')
+            if decision_date:
+                request.decision_date = decision_date
+            else:
+                request.decision_date = datetime.now()
         cls.save(requests)
 
     @classmethod
