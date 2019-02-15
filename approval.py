@@ -76,7 +76,7 @@ class Request(Workflow, ModelSQL, ModelView):
             ('approved', 'Approved'),
             ('rejected', 'Rejected'),
             ('cancelled', 'Cancelled'),
-            ], 'State', required=True)
+            ], 'State', required=True, readonly=True)
     user = fields.Many2One('res.user', 'User', readonly=True, states={
             'required': Eval('state').in_(['approved', 'rejected']),
             }, depends=['state'])
