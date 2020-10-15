@@ -2,13 +2,13 @@
 <!-- The COPYRIGHT file at the top level of this repository contains the full
      copyright notices and license terms. -->
 <tree>
-    <field name="document"/>
+    <field name="document" expand="1"/>
     <field name="version"/>
     <field name="request_date" widget="date"/>
     <field name="request_date" widget="time"/>
     <field name="group"/>
     <field name="state"/>
-    <field name="user"/>
+    <field name="user" expand="1"/>
     <field name="decision_date" widget="date"/>
     <field name="decision_date" widget="time"/>
     <button name="approve" string="Approve" tree_invisible="1"/>
