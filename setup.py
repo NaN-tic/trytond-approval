@@ -61,12 +61,6 @@ else:
     branch = series
 
 dependency_links = [
-    ('hg+https://bitbucket.org/nantic/'
-        'trytond-production_external_party@%(branch)s'
-        '#egg=nantic-production_external_party-%(series)s' % {
-            'branch': branch,
-            'series': series,
-            }),
     ]
 
 if minor_version % 2:
