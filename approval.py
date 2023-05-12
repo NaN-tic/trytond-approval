@@ -1,5 +1,5 @@
 from datetime import datetime
-from trytond.model import Workflow, ModelSQL, ModelView, fields
+from trytond.model import Workflow, ModelSQL, ModelView, fields, DeactivableMixin
 from trytond.pyson import Eval, Bool
 from trytond.pool import Pool
 from trytond.transaction import Transaction
@@ -9,7 +9,7 @@ from trytond.exceptions import UserError
 __all__ = ['Group', 'GroupUser', 'Request']
 
 
-class Group(ModelSQL, ModelView):
+class Group(ModelSQL, ModelView, DeactivableMixin):
     'Approval Group'
     __name__ = 'approval.group'
     name = fields.Char('Name', required=True)
