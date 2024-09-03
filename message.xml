@@ -4,16 +4,13 @@ this repository contains the full copyright notices and license terms. -->
 <tryton>
     <data grouped="1">
       <record model="ir.message" id="forbidden_user">
-          <field name="text">The user \"%(user)s\" cannot approve/reject the approval request
-              \"%(request)s\" because he isn't in the request's Group.</field>
+          <field name="text">The user "%(user)s" cannot approve/reject the approval request "%(request)s" because he isn't in the request's Group.</field>
       </record>
       <record model="ir.message" id="user_not_in_group">
-          <field name="text">The user \"%(user)s\" cannot approve/reject the approval request
-              \"%(request)s\" because he isn't the user of the request.</field>
+          <field name="text">The user "%(user)s" cannot approve/reject the approval request "%(request)s" because he isn't the user of the request.</field>
       </record>
       <record model="ir.message" id="delete_approved_rejected_request">
-          <field name="text">You cannot delete the approval request \"%(request)s\" because it isn't pending or
-              cancelled.</field>
+          <field name="text">You cannot delete the approval request "%(request)s" because it isn't pending or cancelled.</field>
       </record>
     </data>
 </tryton>
