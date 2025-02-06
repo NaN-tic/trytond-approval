@@ -40,7 +40,7 @@ class Group(ModelSQL, ModelView, DeactivableMixin):
         Request = pool.get('approval.request')
         Model = pool.get('ir.model')
         return [x.id for x in Model.search([
-                    ('model', 'in', Request._get_document()),
+                    ('name', 'in', Request._get_document()),
                     ])]
 
 
@@ -64,7 +64,7 @@ class Request(Workflow, ModelSQL, ModelView):
     group = fields.Many2One('approval.group', 'Group',
         domain=[
             ['OR',
-                ('model', '=', None),
+                ('name', '=', None),
                 ('model', '=', Eval('model'))],
             ])
     model = fields.Function(fields.Many2One('ir.model', 'Model'),
@@ -116,7 +116,7 @@ class Request(Workflow, ModelSQL, ModelView):
         Model = Pool().get('ir.model')
         models = cls._get_document()
         models = Model.search([
-                ('model', 'in', models),
+                ('name', 'in', models),
                 ])
         return [(m.model, m.name) for m in models]
 
@@ -126,7 +126,7 @@ class Request(Workflow, ModelSQL, ModelView):
         Model = pool.get('ir.model')
         model_name = Transaction().context.get('approval_request_model')
         if model_name:
-            return Model.search([('model', '=', model_name)], limit=1)[0].id
+            return Model.search([('name', '=', model_name)], limit=1)[0].id
 
     @fields.depends('document')
     def on_change_with_model(self, name=None):
@@ -134,7 +134,7 @@ class Request(Workflow, ModelSQL, ModelView):
         if not self.document:
             return self.default_model()
         model = str(self.document).split(',')[0]
-        models = Model.search([('model', '=', model)], limit=1)
+        models = Model.search([('name', '=', model)], limit=1)
         if not models:
             return None
         return models[0].id
