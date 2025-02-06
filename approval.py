@@ -118,7 +118,7 @@ class Request(Workflow, ModelSQL, ModelView):
         models = Model.search([
                 ('name', 'in', models),
                 ])
-        return [(m.model, m.name) for m in models]
+        return [(m.name, m.string) for m in models]
 
     @staticmethod
     def default_model():
