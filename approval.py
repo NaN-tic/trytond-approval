@@ -64,7 +64,7 @@ class Request(Workflow, ModelSQL, ModelView):
     group = fields.Many2One('approval.group', 'Group',
         domain=[
             ['OR',
-                ('name', '=', None),
+                ('model', '=', None),
                 ('model', '=', Eval('model'))],
             ])
     model = fields.Function(fields.Many2One('ir.model', 'Model'),
