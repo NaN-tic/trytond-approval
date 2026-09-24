@@ -6,17 +6,9 @@
         <record model="res.group" id="group_approval_admin">
             <field name="name">Approval Administration</field>
         </record>
-        <record model="res.user-res.group" id="user_admin_group_approval_admin">
-            <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_approval_admin"/>
-        </record>
 
         <record model="res.group" id="group_approval">
             <field name="name">Approval</field>
-        </record>
-        <record model="res.user-res.group" id="user_admin_group_approval">
-            <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_approval"/>
         </record>
 
         <!-- approval.group -->
